@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #edf5f9;
+}
+
+.mainHeader {
+    width: 100vw;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid wheat;
+    background-color: #ad527f;
+}
+
+.navcont {
+    width: 100vw;
+    max-width: 1180px;
+    min-height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navlist a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.navlist {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 500px;
+    width: 100%;
+    list-style: none;
+    align-items: center;
+}
+
+.navcont img {
+    width: 131px;
+    height: 46px;
+}
+
+/* log out */
+.O-log {
+    background-color: #B6C454;
+    color: white;
+    border: none;
+    text-shadow: 1px 1px 1px rgb(118, 117, 117);
+    width: 100px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.O-log:hover {
+    background-color: #3c6e66;
+    color: white;
+}
+
+
+
+/* footer.css */
+.site-footer {
+    background-color: #91406e;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffe0f0;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    /* white icons */
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+strong {
+    font-weight: 600;
+}

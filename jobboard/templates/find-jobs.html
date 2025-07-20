@@ -1,0 +1,33 @@
+{% extends "frame.html" %}
+{% load static %}
+
+{% block title %}jobs{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/find-jobs.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<main class="job-page">
+    <div class="heading">
+        <h1>Explore the Latest Job Opportunities</h1>
+    </div>
+    <section class="jobs">
+        {% for job in jobs %}
+        <div class="job-card">
+            <img src="{{job.image.url}}" alt="">
+            <h2> {{ job.job_title }} </h2>
+            <p><strong>{{job.company_name}}</strong></p>
+            <p>{{ job.location }}</p>
+
+           <form method="POST" action="{% url 'apply_job' job.id %}">
+             {% csrf_token %}
+             <button type="submit" class="apply-btn">Apply</button>
+           </form>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}

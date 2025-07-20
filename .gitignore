@@ -1,0 +1,19 @@
+# Ignore the Django database file
+db.sqlite3
+
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+
+# Ignore secret environment variables file
+.env
+
+# Ignore collected static files used for deployment
+staticfiles/
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+
+# Ignore macOS system files (if you're on Mac)
+.DS_Store

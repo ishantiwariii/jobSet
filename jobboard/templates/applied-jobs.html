@@ -1,0 +1,40 @@
+{% extends 'frame.html' %}
+{% load static %}
+
+{% block title %}Applied Jobs{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/applied-jobs.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="applied-jobs-page">
+    <div class="heading">
+        <h1>Your Applied Jobs</h1>
+    </div>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="success-msg">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if applied_jobs %}
+    <div class="jobs-container">
+        {% for app in applied_jobs %}
+        <div class="job-card">
+            <img src="{{ app.job.image.url }}" alt="{{ app.job.title }}">
+            <h2>{{ app.job.title }}</h2>
+            <p><strong>Company:</strong> {{ app.job.company }}</p>
+            <p><strong>Location:</strong> {{ app.job.location }}</p>
+            <p><strong>Applied On:</strong> {{ app.applied_at|date:"d M Y, h:i A" }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p class="no-jobs">No jobs applied yet.</p>
+    {% endif %}
+</main>
+{% endblock %}

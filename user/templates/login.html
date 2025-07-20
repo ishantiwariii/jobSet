@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jobSet.login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <header class="mainHeader">
+        <div class="navcont">
+            <img src="{% static 'images/jobset.logo-removebg-preview.png' %}" alt="jobset.logo">
+
+            <ul class="navlist">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'find-jobs' %}">Find Jobs</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+
+            <div class="log-reg">
+                <a href="{% url "login" %}" class="log" target="_self">Login</a>
+                <a href="{% url "register" %}" class="reg" target="_self">Register</a>
+            </div>
+
+        </div>
+    </header>
+    <main class="Login">
+        <div class="left-side">
+            <h2>New to <strong>jobSet</strong>?</h2>
+            <ul class="features">
+                <li>One-click apply using jobSet profile.</li>
+                <li>Get relevant job recommendations.</li>
+                <li>Showcase profile to top companies.</li>
+                <li>Know application status on applied jobs.</li>
+            </ul>
+            <a href="{% url 'register' %}" class="register-btn" target="_self">Register for Free</a>
+            <img src="{% static 'images/desk-preview.png' %}" alt="desk" class="desk-img">
+        </div>
+        <div class="right-side">
+            <h1>Login</h1>
+            <form class="login-form" method="POST" action="">
+                {% csrf_token %}
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+
+                <div class="form-footer">
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </main>
+
+       <footer class="site-footer">
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/" target="_blank" title="GitHub">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+            </a>
+            <a href="https://instagram.com/" target="_blank" title="Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+            </a>
+        </div>
+
+        <p class="copyright">
+            &copy; 2025 <strong>JobSet</strong>. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>

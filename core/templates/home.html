@@ -1,0 +1,56 @@
+{% extends "frame.html" %}
+{% load static %}
+
+{% block title %}home{% endblock  %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock  %}
+
+{% block content %}
+<main class="content-area">
+
+        <section class="welcome">
+            <div class="wel-note">
+                <h1>Hey there, welcome to <strong class="head-log">jobSet</strong>  👋</h1>
+                <p>
+                    Glad to have you here! Whether you're looking for internships, your first job, or just exploring —
+                    we've
+                    got your back.
+                    Jump in, discover new opportunities, and take a step toward your future.
+                </p>
+            </div>
+            <img src="{% static 'images/home-page-hero.png' %}" alt="hero-image" class="image-hero">
+        </section>
+        <section class="user-info">
+            <div class="container">
+
+                <a href="{% url 'find-jobs' %}"><img src="{% static 'images/finding job.png' %}" alt="find-jobs" class="btn-image">
+                    <p>Find jobs</p>
+                </a>
+                <a href="{% url 'profile' %}"><img src="{% static 'images/profile.png' %}" alt="profile" class="btn-image">
+                    <p>Profile</p>
+                </a>
+                <a href="{% url 'applied-jobs' %}"><img src="{% static 'images/applied.png' %}" alt="applied-jobs" class="btn-image">
+                    <p>Applied jobs</p>
+                </a>
+            </div>
+        </section>
+        <section class="lower-val">
+            <div class="upper-side card">
+                <div class="text-part">
+                    <h2>🌟 Features at a Glance</h2>
+                    <ul>
+                        <li>🔍 Search jobs and internships tailored for students</li>
+                        <li>📄 Easy-to-edit profile to showcase your skills</li>
+                        <li>📬 View and track applied jobs anytime</li>
+                        <li>🚪 One-click logout for secure access</li>
+                        <li>🎯 Built by a student, for students</li>
+                    </ul>
+                </div>
+                    <img src="{% static 'images/checked.png' %}" alt="key-check" class="check">
+            </div>
+            <div class="lower-side card">
+            </div>
+        </section>
+    </main>
+{% endblock  %}

@@ -1,0 +1,75 @@
+{% extends "frame.html" %}
+{% load static %}
+
+{% block title %}about{% endblock  %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock  %}
+
+{% block content %}
+    <main class="about-holder">
+
+        <section class="a-job">
+            <div class="dev-op card">
+                <img src="{% static 'images/boy-dev-removebg-preview.png' %}" alt="">
+                <div>
+                    <h2>About the Developer</h2>
+                    <p>
+                        Hi, I am <strong>Ishan Tiwari</strong>, a BCA II Year student at Shri Ramswaroop Memorial
+                        College of
+                        Management, Lucknow.
+                        I am passionate about technology, especially web development and Python programming.
+                        JobSet is my first hands-on project where I tried to build a useful job portal from scratch
+                        using
+                        basic web development skills.
+                        I'm still learning and exploring new things in the field of software and tech.
+                    </p>
+                </div>
+            </div>
+            <div class="info-part">
+
+                <div class="about card">
+                    <div>
+                        <h1>What is JobSet?</h1>
+                        <p>
+                            JobSet is a job and internship portal designed especially for students and freshers. It
+                            helps users
+                            register, create a profile, and explore job listings with ease.
+                        </p>
+                    </div>
+                    <img src="{% static 'images/jobset.logo-removebg-preview.png' %}" alt="what">
+                </div>
+                <div class="why card">
+                    <img src="{% static 'images/why-removebg-preview.png' %}" alt="">
+                    <div>
+                        <h2>Why This Project Was Built</h2>
+                        <p>
+                            This project was developed as part of my BCA curriculum to showcase my understanding of web
+                            development using HTML, CSS, and Python (Django).
+                            The aim was to create a practical and user-friendly job portal specifically for students and
+                            freshers. <br>
+                            Through JobSet, I wanted to demonstrate how real-world applications like user login, profile
+                            handling, and job searching can be built with simple technologies.
+                        </p>
+                    </div>
+                </div>
+                <div class="features card">
+                    <div>
+                        <h2>🔑 Project Features</h2>
+                        <ul>
+                            <li>Easy registration and login for users</li>
+                            <li>Separate dashboard after login</li>
+                            <li>Profile page to show user details</li>
+                            <li>Basic job listing section</li>
+                            <li>Simple and clean user interface</li>
+                            <li>Logout option to end session</li>
+                        </ul>
+                    </div>
+                    <img src="{% static 'key-removebg-preview.png' %}" alt="">
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock  %}

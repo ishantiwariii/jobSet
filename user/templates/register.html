@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jobSet.register</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+
+<body>
+    <header class="mainHeader">
+        <div class="navcont">
+            <img src="{% static 'images/jobset.logo-removebg-preview.png' %}" alt="jobset.logo">
+            <span>Already registered? <a href="{% url "login" %}" target="_self">Login</a> here </span>
+        </div>
+    </header>
+    <main class="content">
+        <div class="left-side">
+            <div class="card1">
+                <img src="{% static 'images/man_with_comp-removebg-preview.png' %}" alt="Student searching jobs">
+                <h2>Why use <strong>jobSet</strong> as a student?</h2>
+                <ul>
+                    <li> Get internship and entry-level job alerts</li>
+                    <li> Apply easily with one-click</li>
+                    <li> Discover hiring companies for freshers</li>
+                </ul>
+            </div>
+        </div>
+        <div class="register-form">
+            <div class="form-head">
+                <h1>Create your <strong class="identify">jobSet</strong> profile</h1>
+                <p>Search & apply to jobs from top companies</p>
+            </div>
+
+            <form method="post" action="#">
+                {% csrf_token %}
+                <label>Full Name*</label>
+                <input type="text" placeholder="What is your name?" name="full_name" required >
+
+                <label>Email ID*</label>
+                <input type="email" placeholder="Tell us your Email ID" name="email" required >
+
+                <label>Password*</label>
+                <input type="password" placeholder="Minimum 6 characters" name="password" required >
+
+                <label>Mobile Number*</label>
+                <input type="tel" placeholder="Enter your mobile number" name="mobile" required >
+
+                <label><strong>Work status*</strong></label>
+                <div class="work-status">
+                    <div class="status-box">
+                        <input type="radio" id="experienced" name="workStatus" value="experienced" required >
+                        <label for="experienced">
+                            <strong>I'm experienced</strong><br />
+                            <span>I have work experience (excluding internships)</span>
+                        </label>
+                    </div>
+
+                    <div class="status-box">
+                        <input type="radio" id="fresher" name="workStatus" value="fresher" >
+                        <label for="fresher">
+                            <strong>I'm a fresher</strong><br>
+                            <span>I am a student/ Haven't worked after graduation</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="updates-check">
+                    <input type="checkbox" id="updates" name="updates">
+                    <label for="updates">
+                        Send me important updates & promotions via SMS, email, and <span class="wa">📱
+                            WhatsApp</span>
+                    </label>
+                </div>
+
+                <!-- Terms and Submit -->
+                <p class="terms">
+                    By clicking Register, you agree to the
+                    <a href="#">Terms and Conditions</a> &
+                    <a href="#">Privacy Policy</a> of jobSet
+                </p>
+
+                <button type="submit" class="register-btn">Register now</button>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends "frame.html" %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="profile-cont">
+    <section class="profile-part">
+        <h1>My <strong>jobSet</strong> Profile</h1>
+
+        <div class="image-part">
+            <img src="{% static 'images/profile.png' %}" alt="profile-image" class="pfp">
+        </div>
+
+        <div class="info-part">
+            <div class="personal">
+                <h2>Personal Details</h2>
+                <p><strong>Name</strong>: <br> {{ user.first_name }}</p>
+                <p><strong>Email ID</strong>: <br> {{ user.email }}</p>
+                <p><strong>Mobile No</strong>: <br> {{ profile.mobile_number }}</p>
+            </div>
+
+            <div class="professional">
+                <h2>Professional Details</h2>
+                <p><strong>Work Status</strong>: {{ profile.get_work_status_display }}</p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

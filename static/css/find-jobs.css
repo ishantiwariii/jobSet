@@ -1,0 +1,126 @@
+/* main page  */
+
+.job-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #f9f9f9;
+    border-radius: 25px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 4px grey;
+    width: 40vw;
+
+}
+
+.heading h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 20px;
+    color: #000000;
+}
+
+.jobs {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1200px;
+    gap: 20px;
+    margin: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.job-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 250px;
+    background-color: #bfdade;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px gray;
+    margin: 6px;
+}
+ 
+.job-card img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.apply-btn{
+    padding: 6px;
+    text-decoration: none;
+    margin: 10px 0px;
+    background-color: hsl(330, 36%, 50%);
+    color: black;
+    min-width: 127px;
+    min-height: 37px;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.job-card a:hover {
+    background-color: #3c6e66;
+    color: #ffffff;
+
+}
+
+/* responsiveness  */
+
+@media (min-width: 100px ) and (max-width:768px) {
+    .mainHeader {
+        width: 100vw;
+        height: auto;
+    }
+
+    .navcont {
+        flex-direction: column;
+    }
+
+    .navcont ul {
+        flex-direction: column;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .job-card{
+        min-width: 200px;
+    }
+
+    .O-log {
+        min-width: 80px;
+        max-height: 36px;
+        margin: 15px;
+
+    }
+
+    /* body  */
+    .heading {
+        min-width: 200px;
+
+    }
+
+    .heading h1 {
+        font-size: 24px;
+    }
+     .jobs {
+        gap: 16px;
+        margin: 10px;
+    }
+}
