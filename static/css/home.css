@@ -10,7 +10,7 @@
     margin-top: 40px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #B6C454;
+    background-color: #F5FAFF;
 }
 
 .wel-note {
@@ -28,16 +28,15 @@
 
 .wel-note h1 {
     font-size: 32px;
-    color: #333;
     margin-bottom: 10px;
     font-weight: 500;
-    color: #91406e;
+    color: #0B1C3F;
 }
 
 .wel-note p {
     font-size: 20px;
     line-height: 1.6;
-    color: #555;
+    color: #3C6E66;
 }
 
 .image-hero {
@@ -60,10 +59,10 @@
     min-height: 100px;
     margin: 40px auto;
     padding: 20px;
-    border: 2px solid #ad527f;
+    border: 2px solid #0B1C3F;
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
+    background-color: #FFF8E1;
 }
 
 .container {
@@ -88,7 +87,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #333;
+    color: #0B1C3F;
     font-size: 14px;
     width: 100px;
     transition: transform 0.3s ease-in-out;
@@ -106,7 +105,7 @@
     justify-content: center;
     max-width: 100vw;
     gap: 20px;
-    background-color: #91406e;
+    /* background-color: #B6C454; */
 
 }
 
@@ -120,13 +119,14 @@
     margin: 40px auto;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #91406e;
     border-radius: 25px;
     background-color: #ffffff;
 }
 
 .card:hover {
     transform: scale(1.01);
-    background-color: #dbdbdb;
+    background-color: #FFF8E1;
 }
 
 .upper-side {
@@ -140,7 +140,7 @@
 
 .upper-side h2 {
     font-size: 32px;
-    color: #333;
+    color: #0B1C3F;
     margin-bottom: 10px;
 }
 
@@ -149,7 +149,7 @@
     list-style-position: inside;
     font-size: 18px;
     line-height: 1.6;
-    color: #555;
+    color: #3C6E66;
 }
 
 .upper-side .text-part {

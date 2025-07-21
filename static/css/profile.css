@@ -20,7 +20,7 @@
   width: 90%;
   gap: 20px;
   border-radius: 25px;
-  background-color: #B6C454;
+  background-color: #7180B9;
 }
  .profile-part h1 {
   margin-top: 20px;
@@ -48,9 +48,9 @@
 
 .info-part h2 {
   font-size: 18px;
-  color: #ad527f;
+  color: #3423A6;
   margin-bottom: 10px;
-  border-bottom: 2px solid #B6C454;
+  border-bottom: 2px solid #3423A6;
   padding-bottom: 5px;
 }
 

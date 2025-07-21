@@ -19,7 +19,7 @@
       justify-content: center;
       align-items: center;
       border-bottom: 2px solid wheat;
-      background-color: #AD527F;
+      background-color: #171738;
   }
 
   .navcont {
@@ -35,6 +35,8 @@
   .navcont img {
       width: 131px;
       height: 46px;
+      filter: brightness(0) invert(1);/* white icons */
+
   }
 
   .navcont span {
@@ -43,7 +45,7 @@
   }
 
   a {
-      color: #1d42a5;
+      color: #627bbf;
       text-decoration: none;
   }
 
@@ -71,7 +73,7 @@
   .card1 {
       width: 80vw;
       min-height: 550px;
-      border: 2px solid rgb(232, 224, 224);
+      border: 2px solid #5271A6;
       box-shadow: 2px 2px 2px whitesmoke;
       border-radius: 25px;
       background-color: #ffffff;
@@ -114,7 +116,7 @@
       height: 891.6px;
       margin: 0px 73px 40px 50px;
       padding: 12px;
-      border: 2px solid rgb(232, 224, 224);
+      border: 2px solid #5271A6;
       box-shadow: 2px 2px 2px whitesmoke;
       background-color: #ffffff;
       border-radius: 25px;
@@ -129,7 +131,7 @@
 
   .form-head {
       padding: 20px;
-      background-color: #AD527F;
+      background-color: #171738;
       border-radius: 20px 20px 0 0;
       color: white;
       margin-bottom: 10px;
@@ -142,8 +144,8 @@
   }
 
   .identify {
-      color: #222;
-      text-shadow: 1px 1px 1px rgb(150, 147, 147);
+      color: #6758c4;
+      text-shadow: 1px 1px  rgb(255, 255, 255);
       font-weight: 700;
   }
 
@@ -230,7 +232,7 @@
 
   /* Register button */
   .register-btn {
-      background-color: #528d80;
+      background-color: #3423A6;
       color: white;
       padding: 12px 24px;
       border: none;
@@ -241,7 +243,7 @@
   }
 
   .register-btn:hover {
-      background-color: #35685d;
+      background-color: #7180B9;
   }
 
   /* responsiveness  */

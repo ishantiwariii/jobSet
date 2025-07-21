@@ -1,12 +1,12 @@
 .applied-jobs-page {
     padding: 30px;
     height: 100vh;
-    background-color: #f5faff;
+    background-color: #f0f0f5;
 }
 
 .heading h1 {
     text-align: center;
-    color: #222;
+    color: #1A1A1A;
     margin-bottom: 40px;
 }
 
@@ -20,9 +20,9 @@
 .job-card {
     width: 260px;
     padding: 20px;
-    background-color: #fff8e1;
+    background-color:  #FFFFFF;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
     text-align: center;
 }
 
@@ -37,7 +37,7 @@
 .job-card h2 {
     font-size: 20px;
     margin-bottom: 8px;
-    color: #333;
+    color: #1A1A1A;
 }
 
 .job-card p {
@@ -47,7 +47,7 @@
 
 .success-msg {
     text-align: center;
-    color: green;
+    color: #2e7d32;
     font-weight: bold;
     margin-bottom: 10px;
 }

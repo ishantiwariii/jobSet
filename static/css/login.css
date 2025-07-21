@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid wheat;
-  background-color: #ad527f;
+  background-color: #171738;
 }
 
 .navcont {
@@ -31,12 +31,6 @@ body {
   align-items: center;
 }
 
-.navlist a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-}
-
 .navlist {
   display: flex;
   justify-content: space-evenly;
@@ -45,9 +39,26 @@ body {
   align-items: center;
 }
 
+.navlist a {
+  text-decoration: none;
+  color: #DFF3E4;
+  font-size: 16px;
+}
+
+.navlist a:hover {
+  color: #3423A6;
+  text-decoration: underline;
+}
+
+.navlist a:active {
+  color: #3423A6;
+}
+
+
 .navcont img {
   width: 131px;
   height: 46px;
+  filter: brightness(0) invert(1);
 }
 
 .log-reg {
@@ -74,25 +85,25 @@ body {
 /* Login Button */
 .log {
   background-color: #ffffff;
-  color: #528d80;
+  color: #3423A6;
   border: 1px solid #528d80;
 }
 
 .log:hover {
-  background-color: #528d80;
+  background-color: #7180B9;
   color: white;
 }
 
 /* register button */
 .reg {
-  background-color: #B6C454;
-  color: white;
+  background-color: #3423A6;
+  color: #DFF3E4;
   border: none;
   text-shadow: 1px 1px 1px rgb(118, 117, 117);
 }
 
 .reg:hover {
-  background-color: #3c6e66;
+  background-color: #7180B9;
   color: white;
 }
 
@@ -142,15 +153,15 @@ main.Login {
   display: inline-block;
   padding: 10px 20px;
   background-color: white;
-  color: #528d80;
-  border: 2px solid #528d80;
+  color: #2E1760;
+  border: 2px solid #2E1760;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
 }
 
 .register-btn:hover {
-  background-color: #528d80;
+  background-color: #2E1760;
   color: white;
 }
 
@@ -214,19 +225,19 @@ main.Login {
 
 .forgot-pass {
   font-size: 13px;
-  color: #528d80;
+  color: #3423A6;
   text-decoration: none;
   transition: 0.2s;
 }
 
 .forgot-pass:hover {
-  color: #406e66;
+  color: #351ecc;
   text-decoration: underline;
 }
 
 .login-btn {
   height: 42px;
-  background-color: #528d80;
+  background-color: #2E1760;
   color: white;
   font-weight: bold;
   font-size: 15px;
@@ -236,13 +247,13 @@ main.Login {
 }
 
 .login-btn:hover {
-  background-color: #406e66;
+  background-color: #4d3286;
 }
 
 /* footer.css */
 .site-footer {
-  background-color: #91406e;
-  color: #ffffff;
+  background-color: #171738;
+  color: #DFF3E4;
   padding: 20px 0;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;

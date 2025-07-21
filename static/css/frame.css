@@ -10,7 +10,8 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
     min-height: 100vh;
-    background-color: #edf5f9;
+    background-color: #DFF3E4;
+    /* color :#171738; */
 }
 
 .mainHeader {
@@ -20,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid wheat;
-    background-color: #ad527f;
+    background-color: #171738;
 }
 
 .navcont {
@@ -33,11 +34,6 @@ body {
     align-items: center;
 }
 
-.navlist a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-}
 
 .navlist {
     display: flex;
@@ -48,16 +44,33 @@ body {
     align-items: center;
 }
 
+.navlist a {
+    text-decoration: none;
+    color: #DFF3E4;
+    font-size: 16px;
+}
+
+.navlist a:hover {
+    color: #3423A6;
+    text-decoration: underline;
+}
+
+.navlist a:active {
+    color: #3423A6;
+}
+
 .navcont img {
     width: 131px;
     height: 46px;
+    filter: brightness(0) invert(1);/* white icons */
 }
 
 /* log out */
 .O-log {
-    background-color: #B6C454;
-    color: white;
+    background-color: #3423A6;
+    color: #DFF3E4;
     border: none;
+    box-shadow: 0 4px 6px rgba(52, 35, 166, 0.3);
     text-shadow: 1px 1px 1px rgb(118, 117, 117);
     width: 100px;
     height: 36px;
@@ -71,16 +84,16 @@ body {
 }
 
 .O-log:hover {
-    background-color: #3c6e66;
-    color: white;
+    background-color: #2E1760;
+    color: #DFF3E4;
 }
 
 
 
 /* footer.css */
 .site-footer {
-    background-color: #91406e;
-    color: #ffffff;
+    background-color: #171738;
+    color: #DFF3E4;
     padding: 20px 0;
     text-align: center;
     font-family: 'Segoe UI', sans-serif;

@@ -61,19 +61,19 @@
 }
 
 .about {
-    border-left: 5px solid #ad527f;
+   border-left: 5px solid #3423A6
 }
 
 .why {
-    border-right: 5px solid #3c6e66;
+    border-right: 5px solid #2F2F6B;
 }
 
 .features {
-    border-left: 5px solid #B6C454;
+     border-left: 5px solid #5271A6;
 }
 
 .dev-op {
-    border-right: 5px solid #ad527f;
+      border-right: 5px solid #3423A6;
 }
 
 .about img,
@@ -96,7 +96,7 @@
 
 .a-job h1,
 .a-job h2 {
-    color: #333;
+    color: #3423A6;
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -104,7 +104,7 @@
 .a-job p {
     font-size: 16px;
     line-height: 1.6;
-    color: #444;
+    color: #222;
 }
 
 .features ul {
