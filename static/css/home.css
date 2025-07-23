@@ -2,7 +2,7 @@
 /* section 1  */
 .welcome {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around ;
     align-items: center;
     text-align: center;
     max-width: 100%;
@@ -16,15 +16,13 @@
 .wel-note {
     display: flex;
     flex-direction: column;
+    margin-right: 30px;
     max-width: 60%;
     min-height: 150px;
     text-align: center;
     flex: 1;
 }
 
-.wel-note:hover {
-    transform: scale(1.01);
-}
 
 .wel-note h1 {
     font-size: 32px;
@@ -119,14 +117,14 @@
     margin: 40px auto;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 2px solid #91406e;
+    border: 2px solid #171738;
     border-radius: 25px;
     background-color: #ffffff;
 }
 
 .card:hover {
     transform: scale(1.01);
-    background-color: #FFF8E1;
+    background-color: #d8d2e4;
 }
 
 .upper-side {
