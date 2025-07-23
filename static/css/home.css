@@ -189,8 +189,14 @@
         align-items: center;
     }
     .wel-note{
-        width: 100%;
+        min-width: 100%;
         padding: 10px;
+    }
+    .wel-note h1 {
+        font-size: 28px;
+    }
+    .wel-note p {
+      font-size: 16px;
     }
     
     /* section 2  */
