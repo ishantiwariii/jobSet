@@ -41,17 +41,18 @@ def login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
             login(request, user)
-            return redirect('home')
+            next_url = request.GET.get('next')
+            return redirect(next_url) if next_url else redirect('home')
         else:
             messages.error(request, 'Invalid email or password.')
 
-    return render(request, 'login.html')
-
+    return render(request, 'login.html', {
+        'next': request.GET.get('next')
+    })
 
 @login_required(login_url='/login/')
 def profile_view(request):

@@ -15,9 +15,15 @@
             <img src="{% static 'images/jobset.logo-removebg-preview.png' %}" alt="jobset.logo">
 
             <ul class="navlist">
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'find-jobs' %}">Find Jobs</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}?next={% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'login' %}?next={% url 'find-jobs' %}">Find Jobs</a></li>
+                <li><a href="{% url 'login' %}?next={% url 'about' %}">About</a></li>
+                {% endif %}
             </ul>
 
             <div class="log-reg">
@@ -41,6 +47,20 @@
         </div>
         <div class="right-side">
             <h1>Login</h1>
+            {% if request.GET.next %}
+            <p class="redirect-warning" style="color: red; margin-bottom: 10px;">
+                Please log in to access this page.
+            </p>
+            {% endif %}
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li style="color: red;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
             <form class="login-form" method="POST" action="">
                 {% csrf_token %}
                 <label for="email">Email ID</label>

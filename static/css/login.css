@@ -191,6 +191,13 @@ main.Login {
   font-weight: 600;
 }
 
+.redirect-warning {
+  font-weight: bold;
+  text-align: center;
+  color: #c0392b;
+}
+
+
 .login-form {
   display: flex;
   flex-direction: column;
