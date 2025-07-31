@@ -19,7 +19,7 @@
     <main class="content">
         <div class="left-side">
             <div class="card1">
-                <img src="{% static 'images/man_with_comp-removebg-preview.png' %}" alt="Student searching jobs">
+                <img src="{% static 'images/register.png' %}" alt="Student searching jobs">
                 <h2>Why use <strong>jobSet</strong> as a student?</h2>
                 <ul>
                     <li> Get internship and entry-level job alerts</li>
@@ -34,8 +34,12 @@
                 <p>Search & apply to jobs from top companies</p>
             </div>
 
-            <form method="post" action="#">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
+
+                <label for="image">Upload Image:</label>
+                <input type="file" name="image" id="image" accept="image/*" required>
+
                 <label>Full Name*</label>
                 <input type="text" placeholder="What is your name?" name="full_name" required >
 

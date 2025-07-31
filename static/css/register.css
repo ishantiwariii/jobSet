@@ -68,6 +68,8 @@
       width: 350px;
       max-height: 891.6px;
       display: flex;
+      justify-content: center;
+      align-items: flex-start;
   }
 
   .card1 {
@@ -84,7 +86,7 @@
   }
 
   .card1 img {
-      width: 210px;
+      width: 310px;
       height: 300px;
   }
 
@@ -165,6 +167,21 @@
       margin-top: 1px;
   }
 
+  input[type="file"] {
+    display: block;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+  }
+
+    input[type="file"]:hover {
+    background-color: #f1f1f1;
+  }
   /* Mobile number field */
   .mobile-field {
       display: flex;

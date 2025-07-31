@@ -11,25 +11,54 @@
 <main class="profile-cont">
     <section class="profile-part">
         <h1>My <strong>jobSet</strong> Profile</h1>
-      <div class="profile">
-          <div class="image-part">
-              <img src="{% static 'images/profile-img.png' %}" alt="profile-image" class="pfp">
-            </div>
-            
-            <div class="info-part">
-                <div class="personal">
-                    <h2>Personal Details</h2>
-                    <p><strong>Name</strong>: <br> {{ user.first_name }}</p>
-                    <p><strong>Email ID</strong>: <br> {{ user.email }}</p>
-                    <p><strong>Mobile No</strong>: <br> {{ profile.mobile_number }}</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="profile">
+                <div class="image-part">
+                    {% if profile.image %}
+                        <img src="{{ profile.image.url }}" alt="profile-image" class="pfp">
+                    {% else %}
+                        <img src="{% static 'images/profile-img.png' %}" alt="profile-image" class="pfp">
+                    {% endif %}
+                    <input type="file" name="image" accept="image/*">
                 </div>
-                
-                <div class="professional">
-                    <h2>Professional Details</h2>
-                    <p><strong>Work Status</strong>: {{ profile.get_work_status_display }}</p>
+
+                <div class="info-part">
+                    <div class="personal">
+                        <h2>Personal Details</h2>
+
+                        <label><strong>Name</strong>:</label>
+                        <input type="text" name="full_name" value="{{ user.first_name }}" required>
+
+                        <label><strong>Email ID</strong>:</label>
+                        <input type="email" value="{{ user.email }}" disabled>
+
+                        <label><strong>Mobile No</strong>:</label>
+                        <input type="text" name="mobile" value="{{ profile.mobile_number }}" required>
+                    </div>
+
+                    <div class="professional">
+                        <h2>Professional Details</h2>
+
+                        <label><strong>Work Status</strong>:</label>
+                        <select name="workStatus" required>
+                            <option value="experienced" {% if profile.work_status == 'experienced' %}selected{% endif %}>I'm experienced</option>
+                            <option value="fresher" {% if profile.work_status == 'fresher' %}selected{% endif %}>I'm a fresher</option>
+                        </select>
+
+                        <label>
+                            <input type="checkbox" name="updates" {% if profile.updates_opt_in %}checked{% endif %}>
+                            Receive updates and promotions
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="save-btn">
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
     </section>
 </main>
 {% endblock %}

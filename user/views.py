@@ -13,10 +13,12 @@ def register_view(request):
         mobile = request.POST.get('mobile')
         work_status = request.POST.get('workStatus')
         updates = request.POST.get('updates') == 'on'
+        image = request.FILES.get('image')
 
         if User.objects.filter(username=email).exists():
             return render(request, 'register.html', {'error': 'Email already registered.'})
 
+        # Create the user
         user = User.objects.create_user(
             username=email,
             email=email,
@@ -24,17 +26,20 @@ def register_view(request):
             first_name=full_name
         )
 
+        # Create the profile with image
         UserProfile.objects.create(
             user=user,
             mobile_number=mobile,
             work_status=work_status,
-            updates_opt_in=updates
+            updates_opt_in=updates,
+            image=image 
         )
 
         login(request, user)
         return redirect('home')
 
     return render(request, 'register.html')
+
 
 
 def login_view(request):
@@ -57,7 +62,27 @@ def login_view(request):
 @login_required(login_url='/login/')
 def profile_view(request):
     user = request.user
-    profile = UserProfile.objects.filter(user=user).first()
+    profile, created = UserProfile.objects.get_or_create(user=user)
+
+    if request.method == 'POST':
+        full_name = request.POST.get('full_name')
+        mobile = request.POST.get('mobile')
+        work_status = request.POST.get('workStatus')
+        updates = request.POST.get('updates') == 'on'
+        image = request.FILES.get('image')
+
+        user.first_name = full_name
+        user.save()
+
+        profile.mobile_number = mobile
+        profile.work_status = work_status
+        profile.updates_opt_in = updates
+        if image:
+            profile.image = image
+        profile.save()
+
+        messages.success(request, "Profile updated successfully.")
+        return redirect('profile')
 
     return render(request, 'profile.html', {
         'user': user,
