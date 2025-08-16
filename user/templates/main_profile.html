@@ -1,0 +1,47 @@
+{% extends "frame.html" %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main-profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="profile-cont">
+  <section class="profile-part">
+
+    <div class="customize">
+      <a href="{% url "profile" %}" class = "setting">
+         <img src="{% static 'images\settings.png' %}" alt="cutomize-btn" class="custum">
+      </a>
+    </div>
+    
+    <h1>My <strong>jobSet</strong> Profile</h1>
+    <div class="profile">
+
+      <div class="image-part">
+        {% if profile.image %}
+         <img src="{{ profile.image.url }}" alt="profile-image" class="pfp">
+        {% else %}
+         <img src="{% static 'images/default-profile.png' %}" alt="default-profile" class="pfp">
+        {% endif %}
+      </div>
+
+      <div class="info-part">
+        <div class="personal">
+          <h2>Personal Details</h2>
+          <p><strong>Name</strong>: <br> {{ user.first_name }}</p>
+          <p><strong>Email ID</strong>: <br> {{ user.email }}</p>
+          <p><strong>Mobile No</strong>: <br> {{ profile.mobile_number }}</p>
+        </div>
+
+        <div class="professional">
+          <h2>Professional Details</h2>
+          <p><strong>Work Status</strong>: {{ profile.get_work_status_display }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

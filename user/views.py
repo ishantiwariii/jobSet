@@ -59,6 +59,14 @@ def login_view(request):
         'next': request.GET.get('next')
     })
 
+@login_required
+def main_profile(request):
+    profile = UserProfile.objects.get(user=request.user)
+    return render(request, 'main_profile.html', {
+        'user': request.user,
+        'profile': profile
+    })
+
 @login_required(login_url='/login/')
 def profile_view(request):
     user = request.user
@@ -82,7 +90,7 @@ def profile_view(request):
         profile.save()
 
         messages.success(request, "Profile updated successfully.")
-        return redirect('profile')
+        return redirect('main-profile')
 
     return render(request, 'profile.html', {
         'user': user,
