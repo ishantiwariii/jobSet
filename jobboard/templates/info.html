@@ -1,0 +1,36 @@
+{% extends "frame.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/info.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="job-card">
+    <div class="job-card-text">
+        <h1>{{ job.job_title }}</h1>
+        <p><strong>Company: </strong>{{job.company_name}}</p>
+        <p><strong>Location: </strong> {{ job.location }}</p>
+        <span><strong>Details</strong></span>
+        <p>{{ job.description }}</p>
+        <span><strong>Skills Required </strong></span>
+        <p>{{ job.skills_required }}</p>
+
+        <!-- Apply Button -->
+        <div class="apply-btn-container">
+            <form method="POST" action="{% url 'apply_job' job.id %}">
+                {% csrf_token %}
+                <button type="submit" class="apply-btn">Apply Now</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="job-card-img">
+        {% if job.image %}
+        <img src="{{ job.image.url }}" alt="{{ job.title }}">
+        {% else %}
+        <img src="{% static 'images/jobportal-preview.png' %}" alt="Job Preview">
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

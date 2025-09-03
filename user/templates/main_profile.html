@@ -9,22 +9,32 @@
 
 {% block content %}
 <main class="profile-cont">
+
   <section class="profile-part">
 
     <div class="customize">
-      <a href="{% url "profile" %}" class = "setting">
-         <img src="{% static 'images\settings.png' %}" alt="cutomize-btn" class="custum">
+      <a href="{% url "profile" %}" class="setting">
+        <img src="{% static 'images\settings.png' %}" alt="cutomize-btn" class="custum">
       </a>
     </div>
+
     
+    {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+      <p class="message {{ message.tags }}">{{ message }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+
     <h1>My <strong>jobSet</strong> Profile</h1>
     <div class="profile">
 
       <div class="image-part">
         {% if profile.image %}
-         <img src="{{ profile.image.url }}" alt="profile-image" class="pfp">
+        <img src="{{ profile.image.url }}" alt="profile-image" class="pfp">
         {% else %}
-         <img src="{% static 'images/default-profile.png' %}" alt="default-profile" class="pfp">
+        <img src="{% static 'images/default-profile.png' %}" alt="default-profile" class="pfp">
         {% endif %}
       </div>
 
@@ -39,6 +49,7 @@
         <div class="professional">
           <h2>Professional Details</h2>
           <p><strong>Work Status</strong>: {{ profile.get_work_status_display }}</p>
+          <p><strong>Skills</strong>: {{ profile.skills }} </p>
         </div>
       </div>
     </div>

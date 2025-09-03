@@ -22,10 +22,7 @@
             <p><strong>{{job.company_name}}</strong></p>
             <p>{{ job.location }}</p>
 
-           <form method="POST" action="{% url 'apply_job' job.id %}">
-             {% csrf_token %}
-             <button type="submit" class="apply-btn">Apply</button>
-           </form>
+        <a href="{% url 'job_detail' job.id %}" class="apply-btn">View Details</a>
         </div>
         {% endfor %}
     </section>

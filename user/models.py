@@ -16,5 +16,7 @@ class UserProfile(models.Model):
 
     image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
 
+    skills = models.CharField(max_length=255, default="Not specified")
+
     def __str__(self):
         return self.user.username

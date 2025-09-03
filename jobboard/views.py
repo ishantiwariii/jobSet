@@ -26,3 +26,7 @@ def applied_jobs_(request):
     applied_jobs = AppliedJob.objects.filter(user=request.user).select_related('job').order_by('-applied_at')
     return render(request, 'applied-jobs.html', {'applied_jobs': applied_jobs})
 
+@login_required
+def job_detail(request, job_id):
+    job = get_object_or_404(Job, id=job_id)
+    return render(request, "info.html", {"job": job})

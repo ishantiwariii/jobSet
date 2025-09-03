@@ -9,7 +9,9 @@
 
 {% block content %}
 <main class="profile-cont">
+    
     <section class="profile-part">
+
         <h1>My <strong>jobSet</strong> Profile</h1>
 
         <form method="POST" enctype="multipart/form-data">
@@ -43,9 +45,16 @@
 
                         <label><strong>Work Status</strong>:</label>
                         <select name="workStatus" required>
-                            <option value="experienced" {% if profile.work_status == 'experienced' %}selected{% endif %}>I'm experienced</option>
-                            <option value="fresher" {% if profile.work_status == 'fresher' %}selected{% endif %}>I'm a fresher</option>
+                            <option value="experienced" {% if profile.work_status == "experienced" %}selected{% endif %}>
+                                I'm experienced
+                            </option>
+                            <option value="fresher" {% if profile.work_status == "fresher" %}selected{% endif %}>
+                                I'm a fresher
+                            </option>
                         </select>
+
+                        <label><strong>Skills</strong>:</label>
+                        <input type="text" name="skills" value="{{ profile.skills }}" placeholder="Enter your skills">
 
                         <label>
                             <input type="checkbox" name="updates" {% if profile.updates_opt_in %}checked{% endif %}>

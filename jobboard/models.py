@@ -8,6 +8,8 @@ class Job(models.Model):
     job_title = models.CharField(max_length=100)
     company_name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
+    description = models.TextField(null=True, blank=True, default="No description provided")
+    skills_required = models.CharField(max_length=255, default="Not specified")
     posted_at = models.DateTimeField(auto_now_add=True)
 
 
