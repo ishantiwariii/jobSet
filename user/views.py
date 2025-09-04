@@ -13,7 +13,6 @@ def register_view(request):
         mobile = request.POST.get('mobile')
         work_status = request.POST.get('workStatus')
         updates = request.POST.get('updates') == 'on'
-        skills = request.POST.get('skills')
         image = request.FILES.get('image')
 
         if User.objects.filter(username=email).exists():
@@ -33,7 +32,6 @@ def register_view(request):
             mobile_number=mobile,
             work_status=work_status,
             updates_opt_in=updates,
-            skills=skills,
             image=image 
         )
 

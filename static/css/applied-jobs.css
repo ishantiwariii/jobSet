@@ -3,7 +3,7 @@ body{
 }
 .applied-jobs-page {
     padding: 30px;
-    height: 100vh;
+    min-height: 80%;
     background-color: #f0f0f5;
 }
 
