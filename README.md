@@ -6,7 +6,7 @@
 
 ## ⚙️ Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript  
+- **Frontend**: HTML, CSS
 - **Backend**: Django (Python)  
 - **Database**: SQLite  
 - **Version Control**: Git & GitHub  
